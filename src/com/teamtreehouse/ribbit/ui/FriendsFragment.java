@@ -39,7 +39,7 @@ public class FriendsFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_friends,
+		View rootView = inflater.inflate(R.layout.user_grid_view,
 				container, false);
 		mGridView = (GridView)rootView.findViewById(R.id.friendGridView);
 		mEmptyEextView = (TextView)rootView.findViewById(android.R.id.empty);

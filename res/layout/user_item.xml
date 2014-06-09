@@ -14,6 +14,18 @@
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
          />
+    
+    <ImageView
+        android:id="@+id/checkImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/avatar_selected"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:visibility="invisible"
+         />
 
     <TextView
         android:id="@+id/userLabel"

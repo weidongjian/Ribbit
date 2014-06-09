@@ -19,6 +19,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -42,6 +43,7 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 			rowView = inflater.inflate(R.layout.user_item, null);
 			holder = new ViewHolder();
 			holder.userImageView = (ImageView) rowView.findViewById(R.id.uesrImageView);
+			holder.checkImageView = (ImageView)rowView.findViewById(R.id.checkImageView);
 			//holder.nameLabel = (TextView) rowView.findViewById(R.id.senderLabel);
 			holder.friendsLabel = (TextView)rowView.findViewById(R.id.userLabel);
 			rowView.setTag(holder);
@@ -72,7 +74,13 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 		//	holder.iconImageView.setImageResource(R.drawable.ic_video);
 		
 		holder.friendsLabel.setText(user.getUsername());
-		
+		GridView gridView = (GridView)parent;
+		if (gridView.isItemChecked(position)) {
+			holder.checkImageView.setVisibility(View.VISIBLE);
+		}
+		else {
+			holder.checkImageView.setVisibility(View.INVISIBLE);
+		}
 		
 		return rowView;
 	}
@@ -80,6 +88,7 @@ public class UserAdapter extends ArrayAdapter<ParseUser> {
 	private class ViewHolder {
 		ImageView userImageView;
 		TextView friendsLabel;
+		ImageView checkImageView;
 	}
 	
 	public void refill(List<ParseUser> messages) {
