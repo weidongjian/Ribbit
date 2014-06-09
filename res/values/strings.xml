@@ -53,5 +53,6 @@
     <string name="background_login_page">The background image of the login page</string>
     <string name="cancel_button_label">CANCEL</string>
     <string name="content_des_message_icon">Message Icon</string>
+    <string name="content_desc_avatar_image">Avatar Image</string>
 
 </resources>

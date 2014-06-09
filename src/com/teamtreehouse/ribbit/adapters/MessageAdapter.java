@@ -51,6 +51,7 @@ public class MessageAdapter extends ArrayAdapter<ParseObject> {
 		Date createdAt = message.getCreatedAt();
 		long now = new Date().getTime();
 		String convertDate = DateUtils.getRelativeTimeSpanString(createdAt.getTime(), now, DateUtils.SECOND_IN_MILLIS).toString();
+		holder.timelabel.setText(convertDate);
 		
 		if (message.getString(ParseConstants.KEY_FILE_TYPE).equals(ParseConstants.TYPE_IMAGE)) {
 			holder.iconImageView.setImageResource(R.drawable.ic_picture);
@@ -59,7 +60,7 @@ public class MessageAdapter extends ArrayAdapter<ParseObject> {
 			holder.iconImageView.setImageResource(R.drawable.ic_video);
 		
 		holder.nameLabel.setText(message.getString(ParseConstants.KEY_SENDER_NAME));
-		holder.timelabel.setText(convertDate);
+		
 		
 		return rowView;
 	}

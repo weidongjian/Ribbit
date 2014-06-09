@@ -35,7 +35,8 @@
             android:id="@+id/usernameField"
             style="@style/AuthExitText"
             android:layout_marginTop="@dimen/login_vertical_margin"
-            android:hint="@string/username_hint">
+            android:hint="@string/username_hint"
+            android:inputType="">
             <requestFocus />
         </EditText>
         
